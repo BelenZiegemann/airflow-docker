@@ -1,0 +1,22 @@
+[2024-02-24T19:27:03.475+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: example_python_operator.external_python manual__2024-02-24T19:27:00.848119+00:00 [queued]>
+[2024-02-24T19:27:03.479+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: example_python_operator.external_python manual__2024-02-24T19:27:00.848119+00:00 [queued]>
+[2024-02-24T19:27:03.479+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 1
+[2024-02-24T19:27:03.485+0000] {taskinstance.py:2191} INFO - Executing <Task(ExternalPythonOperator): external_python> on 2024-02-24 19:27:00.848119+00:00
+[2024-02-24T19:27:03.490+0000] {standard_task_runner.py:60} INFO - Started process 122 to run task
+[2024-02-24T19:27:03.492+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'example_python_operator', 'external_python', 'manual__2024-02-24T19:27:00.848119+00:00', '--job-id', '10', '--raw', '--subdir', '/home/***/.local/lib/python3.8/site-packages/***/example_dags/example_python_operator.py', '--cfg-path', '/tmp/tmpf35hsj3k']
+[2024-02-24T19:27:03.493+0000] {standard_task_runner.py:88} INFO - Job 10: Subtask external_python
+[2024-02-24T19:27:03.516+0000] {task_command.py:423} INFO - Running <TaskInstance: example_python_operator.external_python manual__2024-02-24T19:27:00.848119+00:00 [running]> on host ce9b59703482
+[2024-02-24T19:27:03.546+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='example_python_operator' AIRFLOW_CTX_TASK_ID='external_python' AIRFLOW_CTX_EXECUTION_DATE='2024-02-24T19:27:00.848119+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-02-24T19:27:00.848119+00:00'
+[2024-02-24T19:27:03.941+0000] {process_utils.py:182} INFO - Executing cmd: /usr/local/bin/python /tmp/venv-callh3y2an7f/script.py /tmp/venv-callh3y2an7f/script.in /tmp/venv-callh3y2an7f/script.out /tmp/venv-callh3y2an7f/string_args.txt /tmp/venv-callh3y2an7f/termination.log
+[2024-02-24T19:27:03.945+0000] {process_utils.py:186} INFO - Output:
+[2024-02-24T19:27:05.719+0000] {process_utils.py:190} INFO - Running task via /usr/local/bin/python
+[2024-02-24T19:27:05.725+0000] {process_utils.py:190} INFO - Sleeping
+[2024-02-24T19:27:05.725+0000] {process_utils.py:190} INFO - Please wait...
+[2024-02-24T19:27:06.719+0000] {process_utils.py:190} INFO - Please wait...
+[2024-02-24T19:27:07.722+0000] {process_utils.py:190} INFO - Please wait...
+[2024-02-24T19:27:08.726+0000] {process_utils.py:190} INFO - Please wait...
+[2024-02-24T19:27:09.731+0000] {process_utils.py:190} INFO - Finished
+[2024-02-24T19:27:09.913+0000] {python.py:201} INFO - Done. Returned value was: None
+[2024-02-24T19:27:09.944+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=example_python_operator, task_id=external_python, execution_date=20240224T192700, start_date=20240224T192703, end_date=20240224T192709
+[2024-02-24T19:27:09.972+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-02-24T19:27:09.988+0000] {taskinstance.py:3280} INFO - 1 downstream tasks scheduled from follow-on schedule check

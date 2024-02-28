@@ -1,0 +1,37 @@
+[2024-02-24T20:15:09.861+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: first_dag.Test_conexion scheduled__2023-05-13T00:00:00+00:00 [queued]>
+[2024-02-24T20:15:09.889+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: first_dag.Test_conexion scheduled__2023-05-13T00:00:00+00:00 [queued]>
+[2024-02-24T20:15:09.891+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 1
+[2024-02-24T20:15:09.944+0000] {taskinstance.py:2191} INFO - Executing <Task(PostgresOperator): Test_conexion> on 2023-05-13 00:00:00+00:00
+[2024-02-24T20:15:09.981+0000] {standard_task_runner.py:60} INFO - Started process 1348 to run task
+[2024-02-24T20:15:10.005+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'first_dag', 'Test_conexion', 'scheduled__2023-05-13T00:00:00+00:00', '--job-id', '105', '--raw', '--subdir', 'DAGS_FOLDER/first_dag.py', '--cfg-path', '/tmp/tmpla8yryrm']
+[2024-02-24T20:15:10.016+0000] {standard_task_runner.py:88} INFO - Job 105: Subtask Test_conexion
+[2024-02-24T20:15:10.227+0000] {task_command.py:423} INFO - Running <TaskInstance: first_dag.Test_conexion scheduled__2023-05-13T00:00:00+00:00 [running]> on host ce9b59703482
+[2024-02-24T20:15:10.520+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='first_dag' AIRFLOW_CTX_TASK_ID='Test_conexion' AIRFLOW_CTX_EXECUTION_DATE='2023-05-13T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-05-13T00:00:00+00:00'
+[2024-02-24T20:15:10.526+0000] {sql.py:276} INFO - Executing: SELECT 1
+[2024-02-24T20:15:10.562+0000] {base.py:83} INFO - Using connection ID 'postgres1' for task execution.
+[2024-02-24T20:15:10.636+0000] {base.py:83} INFO - Using connection ID 'postgres1' for task execution.
+[2024-02-24T20:15:10.653+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/common/sql/operators/sql.py", line 282, in execute
+    output = hook.run(
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/common/sql/hooks/sql.py", line 391, in run
+    with closing(self.get_conn()) as conn:
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/postgres/hooks/postgres.py", line 158, in get_conn
+    self.conn = psycopg2.connect(**conn_args)
+  File "/home/airflow/.local/lib/python3.8/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (::1), port 5432 failed: Cannot assign requested address
+	Is the server running on that host and accepting TCP/IP connections?
+
+[2024-02-24T20:15:10.690+0000] {taskinstance.py:1138} INFO - Marking task as FAILED. dag_id=first_dag, task_id=Test_conexion, execution_date=20230513T000000, start_date=20240224T201509, end_date=20240224T201510
+[2024-02-24T20:15:10.725+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 105 for task Test_conexion (connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (::1), port 5432 failed: Cannot assign requested address
+	Is the server running on that host and accepting TCP/IP connections?
+; 1348)
+[2024-02-24T20:15:10.765+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2024-02-24T20:15:10.816+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
